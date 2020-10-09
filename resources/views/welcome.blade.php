@@ -83,7 +83,7 @@
                 <div class="title m-b-md">
                     first project teamwork
                     <br>
-                   <p> Amir ziaee</p>
+                   <p> Amir ziaee programmer php </p>
                 </div>
 
                 <div class="links">
