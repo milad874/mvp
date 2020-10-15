@@ -99,3 +99,28 @@
         </div>
     </body>
 </html>
+
+
+{{--
+* name db
+-- name table 
+---------------------
+--
+* virgol db
+--users
+--posts
+--comments
+--likes
+--follows
+--logs
+--media
+--options
+--categories
+--menu
+--
+
+
+php artisan make:auth
+
+
+--}}

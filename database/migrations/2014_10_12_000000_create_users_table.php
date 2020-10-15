@@ -16,9 +16,17 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('lastname');
+            $table->string('phone')->unique();
+            $table->string('username')->unique();
+          //  $table->unsignedBigInteger('media_id');
+        //    $table->foreign('media_id')->references('id')->on('media');
+            $table->tinyInteger('is_admin')->default(0);
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,3 +42,4 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
+
