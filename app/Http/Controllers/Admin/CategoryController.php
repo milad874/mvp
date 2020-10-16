@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Http\Requests\CategoryRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -27,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -36,9 +37,16 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        Category::create(
+            [
+                'name' =>$request->name ,
+                'slug' => $request->slug
+            ]
+        );
+        return redirect(route('categories.index'))->with('status' , 'با موفقیت ثبت گردید!');
+
     }
 
     /**
@@ -60,7 +68,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.categories.edit' , compact('category'));
     }
 
     /**
@@ -70,9 +79,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update([
+            'name' => $request->name,
+            'slug' => $request->slug
+        ]);
+        return redirect(route('categories.index'))->with('status', 'تغییرات با موقعیت ثبت گردید');
     }
 
     /**
@@ -83,6 +97,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+        return back()->with(['status'=> 'با موفقیت حذف گردید' , 'class' => 'danger']);
     }
 }
