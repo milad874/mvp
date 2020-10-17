@@ -25,6 +25,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin' ] , function () {
        return view('admin.layouts.master');
     });
     Route::resource('/categories' , 'CategoryController');
+    Route::resource('/users','UserController');
 
 
 } );
