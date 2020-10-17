@@ -37,3 +37,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
+
+
+
+
+
+// php artisan make:controller Admin/UserController -r
