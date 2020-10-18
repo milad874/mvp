@@ -139,6 +139,23 @@
 
                         </ul>
                     </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span>کاربران</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('users.index') }}">لیست کاربران</a></li>
+                            <li><a href="{{ route('users.create') }}">افزودن کاربر</a></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="zmdi zmdi-invert-colors"></i> <span>گالری</span> <span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ route('media.index') }}">نمایش گالری</a></li>
+                            <li><a href="{{ route('media.create') }}">افزودن تصویر</a></li>
+
+                        </ul>
+                    </li>
 
                 </ul>
                 <div class="clearfix"></div>
@@ -162,7 +179,7 @@
             <div class="container">
 
                 <div class="row">
-                            
+
                     @yield('content')
                 </div>
                 <!-- End row -->

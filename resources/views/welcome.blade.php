@@ -103,11 +103,11 @@
 
 {{--
 * name db
--- name table 
+-- name table
 ---------------------
 --
 * virgol db
---users
+++users
 --posts
 --comments
 --likes
@@ -115,7 +115,7 @@
 --logs
 --media
 --options
---categories
+++categories
 --menu
 --
 
